@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="back">
+        <h1 class="titulo">calculadora</h1>
+        <div class="borda">
+            <div class="border2">
+                <div class="barra" id="resultado" ></div>
+            </div>
+        </div>
+        <div class="interface">
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="clean('')" >C</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let">
+                            <i class="bi bi-backspace" onclick="back()"></i>
+                        </h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="insert('%')">%</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="insert('/')">/</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--1-linha calculeitor-->
+        <div class="interface">
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('7')">7</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('8')">8</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('9')">9</h1>
+                    </button>
+                </div>
+            </div>
+
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="insert('x')">x</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 2- linha -->
+        <div class="interface">
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('4')">4</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('5')">5</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('6')">6</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="insert('-')">-</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 3- linha -->
+        <div class="interface">
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('1')">1</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('2')">2</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('3')">3</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let" onclick="insert('+')">+</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 4- linha-->
+        <div class="interface">
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let"><i class="bi-calculator"></i></h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('0')">0</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="insert('.')">.</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="borda">
+                <div class="bnt">
+                    <button class="border">
+                        <h1 class="let1" onclick="calcular()">=</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function insert(num){
+            var numero = document.getElementById('resultado').innerHTML ;
+            document.getElementById('resultado').innerHTML = numero + num;
+        }
+        function clean(){
+            document.getElementById('resultado').innerHTML = "";
+        }
+        function back (){
+            var resultado = document.getElementById('resultado').innerHTML ; 
+            document.getElementById('resultado').innerHTML = resultado.substring(0 , resultado.length -1);
+        }
+        function calcular (){
+            var resultado = document.getElementById('resultado').innerHTML ; 
+            if(resultado){
+                document.getElementById('resultado').innerHTML  = eval(resultado); 
+            }
+        }
+    </script>
+</body>
+</html>
